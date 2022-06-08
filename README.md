@@ -23,7 +23,7 @@ We will use machine learning for predicting the premium of health insurance and 
 	1. Visualizations
 	2. Correlation
 	3. Loss/cost
-	4. Linear regression for NonSmokers (skikit-learn)
+	4. Linear regression for NonSmokers (scikit-learn)
 5. Model creation for Smokers in the dataset
 	1. Workflow of Machine Learning Problem:
 		1.  Explore the data and find correlations between inputs and targets
