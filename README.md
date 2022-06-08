@@ -2,7 +2,59 @@
 
 ## Project Description
 
-We will use machine learning for predicting the premium of health insurance and to identify factors that lead to higher healthcare costs.
+We will use machine learning for predicting the cost of healthcare given a list of personal characteristics. Our aim is to understand with greater clarity the correlation of cost with each of these features and in doing so, evaluate cost-effectiveness of personal health. 
+
+## Data
+
+### Overview
+Our data is sourced from the Medical Expenditure Panel Survey (MEPS), a set of large-scale surveys of families and individuals, the medical providers, and employers accross the United States. More specifically, this project uses data from the Household Compoent (HC) that collects data from samples of families and individuals in selected communities to create a nationally representative sample population.
+
+[MEPS File List](https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_results.jsp?cboDataYear=All&cboDataTypeY=101%2CConsolidated+Data&buttonYearandDataType=Search) 
+[MEPS 2018 Documentation](https://meps.ahrq.gov/data_stats/download_data/pufs/h209/h209doc.shtml#Health2510)
+
+### Variables used in analysis: 
+| Variable Name | Description |
+--------------| ----------------|
+| `ID` | Panel # + Encrypted DU Identifier |
+| `Family_Size` | Number of persons associated with a single family unit after students are linked to their associated parent |
+| `Region` | Geopgraphic Census Region | 
+| `Age` | Age of respondent as of 12/31 |
+| `Sex` | Sex (1=M/2=F) | 
+| `Race` | Race | 
+| `Education_Level` | Total Years of Education |
+| `Highest_Degree` | Highest degree earned | 
+| `BMI` | Body Mass Index | 
+| `Tobacco_Use` | Frequency of Tobacco Use in last 12 months | 
+| `Total_Personal_Income` | Person’s Total Income | 
+| `Uninsured_2018` | Uninsured all of 2018 | 
+| `Total_Expenditure` | Total expenditure (sum of all sources) on health services | 
+| `Exp_Pocket` | Out of Pocket Expenditure |
+| `Exp_Medicare` | Medicare Expenditure | 
+| `Total_Medicaid` | Medicaid Expenditure | 
+| `Exp_VA` | Veteran’s Administration/CHAMPVA Expenditure |
+| `Total_Priv_Tri` | Total Private and TRICARE Expenditures | 
+| `Total_Other` | Other Federal, Other State and Local, Other Private, Other Public, and Other Unclassified Sources | 
+
+### Variable Encoding Key
+Region:
+| Value | Label | States |
+| ----- | ----- | ------ |
+| 1 | Northeast | Connecticut, Maine, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania, Rhode Island, and Vermont |
+| 2 | Midwest | Indiana, Illinois, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, North Dakota, Ohio, South Dakota, and Wisconsin |
+| 3 | South | Alabama, Arkansas, Delaware, District of Columbia, Florida, Georgia, Kentucky, Louisiana, Maryland, Mississippi, North Carolina, Oklahoma, South Carolina, Tennessee, Texas, Virginia, and West Virginia |
+| 4 | West | Alaska, Arizona, California, Colorado, Hawaii, Idaho, Montana, Nevada, New Mexico, Oregon, Utah, Washington, and Wyoming | 
+
+Race:
+| Value | Label | 
+| ----- | ----- |
+| 1 | White – No other race reported |
+| 2 | Black – No other race reported |
+| 3 | American Indian/Alaska Native – No other race reported |
+| 4 | Asian Indian – No other race reported |
+| 5 | Chinese – No other race reported |
+| 6 | Filipino – No other race reported |
+| 10 | Oth Asian/Natv Hawaiian/Pacfc Isl- No Other race reported |
+| 12 | Multiple races reported | 
 
 
 ## Outline
@@ -10,16 +62,16 @@ We will use machine learning for predicting the premium of health insurance and 
 1. Exploratory Analysis and Visualization
 	1. Age
 	2. BMI
-	3. Charges
+	3. Expenditure
 2. Visualization of the distribution of medical charges in connection with other factors like "sex" and "region"
 	1. Sex
 	2. Region
-	3. Smoker
+	3. Tobacco-use
 3. Visualization of the distributions of the "sex", "region" and "children" columns
-	1. Children
-	2. Age & charges
-	3. BMI & charges
-4. Visualizing how the "charges" column is related to other columns ("children", "sex", "region" and "smoker").
+	1. Family size
+	2. Age & Expenditure
+	3. BMI & Expenditure
+4. Visualizing how the "Expenditure" column is related to other columns ("children", "sex", "region" and "Tobacco-use").
 	1. Visualizations
 	2. Correlation
 	3. Loss/cost
@@ -32,40 +84,8 @@ We will use machine learning for predicting the premium of health insurance and 
 		4.  Set aside a test set (using a fraction of the training set)
 		5.  Train the model
 		6.  Make predictions on the test set and compute the loss
-​
-### Ideas for work division:
-* Each section, as seen above, can be broken into individual modules - each contained within their own notebook
-	* Then, within our main notebook we can import and call each module
-​
-* This allows us to split up the project without depending on the previous section to be compete
-	* However, each section will need to create it's own test data so that we can test and run the code independently
-​
-### Other things to consider: 
-While I like the layout of this project, I feel it best if we use data other than that contained in the Kaggle project
-​
-What we will need:
-*  Features 
-	* e.g. BMI, age, smoker (y/n))
-* At least 10x features in row data
-	* Age, BMI, smoker, chagers = 4 
-		* 4 x 100 = 400 row data
-​
-​
-## Notes on Data
-* BMI every other year
 
 
-### Variables
-| Variable | Description | 
-|-------------| ----------------| 
-| PID | Person Number | 
-| AGE18X | Age as of 12/31/18 (Edited/Imputed) |
-| ENDRFY18 | 2018 Reference Period End Date: Year |
-| TTLP18X | Person’s Total Income | 
-| TOTEXP18 | Total Expenditures | 
-| REGION18 | Census Region as of 12/31/18| 
-| ADBMI42 | SAQ: Adult Body Mass Index (>17)-RD 4/2| 
-| ADTBAC42 | Asked if smoke or use tobacco by health professional, last 12 months | 
 [MEPS Docs](https://meps.ahrq.gov/data_stats/download_data/pufs/h209/h209doc.shtml#Health2510)
 [MEPS Files](https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_results.jsp?cboDataYear=All&cboDataTypeY=101%2CConsolidated+Data&buttonYearandDataType=Search) 
 [MEPS Conversion](https://meps.ahrq.gov/about_meps/Price_Index.shtml)
@@ -75,22 +95,17 @@ What we will need:
 ## Contributors
 
 * Maureen Kaaria
-
-Email: maureenkaaria@gmail.com
+    Email: maureenkaaria@gmail.com
+ 
 * Khaing Thwe
+    Email: khaingzt88@gmail.com
 
-Email: khaingzt88@gmail.com
 * Olga Koryachek
+    Email: olgakoryachek@live.com
+    [LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true "LinkedIn")
 
-Email: olgakoryachek@live.com
-
-[LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true "LinkedIn")
 * Arthur Lovett
-
-Email: arthur@arthurlovett.com
-
-
----
+    Email: repo@arthurlovett.com
 
 ## License
 
