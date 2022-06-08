@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Mac Data Protection
+.DS_Store
+
 # Project-Specific Excel Files
 h209.xlsx
