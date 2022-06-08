@@ -99,7 +99,7 @@ Race:
     * [LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true "LinkedIn")
 
 * Arthur Lovett
-Email: repo@arthurlovett.com
+    * Email: repo@arthurlovett.com
 
 ## License
 
