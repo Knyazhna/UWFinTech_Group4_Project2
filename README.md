@@ -2,6 +2,8 @@
 
 ## Project Description
 
+We will use machine learning for predicting the premium of health insurance and to identify factors that lead to higher healthcare costs.
+
 
 ## Outline
 
@@ -20,11 +22,8 @@
 4. Visualizing how the "charges" column is related to other columns ("children", "sex", "region" and "smoker").
 	1. Visualizations
 	2. Correlation
-	3. Linear regression
-	4. Model
-	5. Loss/cost
-	6. Optimizer
-	7. Linear regression (skikit-learn)
+	3. Loss/cost
+	4. Linear regression for NonSmokers (skikit-learn)
 5. Model creation for Smokers in the dataset
 	1. Workflow of Machine Learning Problem:
 		1.  Explore the data and find correlations between inputs and targets
