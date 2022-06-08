@@ -57,7 +57,7 @@ Race:
 | 12 | Multiple races reported | 
 
 
-## Outline
+## Analysis
 
 1. Exploratory Analysis and Visualization
 	1. Age
@@ -86,26 +86,20 @@ Race:
 		6.  Make predictions on the test set and compute the loss
 
 
-[MEPS Docs](https://meps.ahrq.gov/data_stats/download_data/pufs/h209/h209doc.shtml#Health2510)
-[MEPS Files](https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_results.jsp?cboDataYear=All&cboDataTypeY=101%2CConsolidated+Data&buttonYearandDataType=Search) 
-[MEPS Conversion](https://meps.ahrq.gov/about_meps/Price_Index.shtml)
-
-
-
 ## Contributors
 
 * Maureen Kaaria
-    Email: maureenkaaria@gmail.com
+Email: maureenkaaria@gmail.com
  
 * Khaing Thwe
-    Email: khaingzt88@gmail.com
+Email: khaingzt88@gmail.com
 
 * Olga Koryachek
-    Email: olgakoryachek@live.com
-    [LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true "LinkedIn")
+Email: olgakoryachek@live.com
+[LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true "LinkedIn")
 
 * Arthur Lovett
-    Email: repo@arthurlovett.com
+Email: repo@arthurlovett.com
 
 ## License
 
