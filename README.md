@@ -4,6 +4,7 @@
 
 We will use machine learning for predicting the cost of healthcare given a list of personal characteristics. Our aim is to understand with greater clarity the correlation of cost with each of these features and in doing so, evaluate cost-effectiveness of personal health. 
 
+
 ## Data
 
 ### Overview
@@ -100,6 +101,7 @@ Race:
 
 * Arthur Lovett
     * Email: repo@arthurlovett.com
+
 
 ## License
 
