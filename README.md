@@ -77,14 +77,15 @@ Race:
 	2. Correlation
 	3. Loss/cost
 	4. Linear regression for NonSmokers (scikit-learn)
-5. Model creation for Smokers in the dataset
-	1. Workflow of Machine Learning Problem:
-		1.  Explore the data and find correlations between inputs and targets
-		2.  Pick the right model, loss functions and optimizer for the problem at hand
-		3.  Scale numeric variables and one-hot encode categorical data
-		4.  Set aside a test set (using a fraction of the training set)
-		5.  Train the model
-		6.  Make predictions on the test set and compute the loss
+5. Create three different Machine Learning model:
+	1. Workflow of Machine Learning :
+		1.  Explore the data and train and test on three Regression Models (Linear, Ridge, Lasso)
+		2.  Fit into the model and test the R-Squared score
+		3.  Using Mean Squared Error (MSE) metric to evaluate predictions accuracy
+		4.  Evaluate cross-valatdation
+		5.  Make predictions on the test
+		6.  Train the model, compared three models and pick the most accurate Regression model
+		7.  Build an automated RobotAdvisor to estimate the annual Healthcare expenditure for new/existing customers (AWS Lex).
 
 
 ## Contributors
